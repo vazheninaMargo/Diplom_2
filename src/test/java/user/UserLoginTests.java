@@ -1,5 +1,6 @@
 package user;
 
+import common.TestsHelper;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -39,7 +40,7 @@ public class UserLoginTests {
     public void checkSuccessfulLogin() {
         // Проверка логина пользователя
         Response response = UserTestsHelper.sendPostLoginCourier(userLoginModel);
-        UserTestsHelper.compareResponseCode(response, 200);
+        TestsHelper.compareResponseCode(response, 200);
     }
 
     @Test
@@ -52,7 +53,7 @@ public class UserLoginTests {
 
         // Проверка логина пользователя с неправильным email
         Response response = UserTestsHelper.sendPostLoginCourier(model);
-        UserTestsHelper.compareResponseCode(response, 401);
+        TestsHelper.compareResponseCode(response, 401);
     }
 
     @Test
@@ -65,7 +66,7 @@ public class UserLoginTests {
 
         // Проверка логина пользователя с неправильным паролем
         Response response = UserTestsHelper.sendPostLoginCourier(model);
-        UserTestsHelper.compareResponseCode(response, 401);
+        TestsHelper.compareResponseCode(response, 401);
     }
 
     @After

@@ -3,7 +3,6 @@ package user;
 import io.qameta.allure.Step;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
-import io.restassured.http.Header;
 import io.restassured.response.Response;
 import praktikum.UserCreateModel;
 import praktikum.UserInfoModel;
@@ -70,10 +69,5 @@ public class UserTestsHelper {
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                 .when()
                 .delete("/api/auth/user");
-    }
-
-    @Step("Compare response status code")
-    static public void compareResponseCode(Response response, int expectedCode) {
-        response.then().statusCode(expectedCode);
     }
 }

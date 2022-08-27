@@ -1,5 +1,6 @@
 package user;
 
+import common.TestsHelper;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -33,7 +34,7 @@ public class UserCreateTests {
 
         // Создание пользователя
         Response createResponse = UserTestsHelper.sendPostCreateUser(userCreateModel);
-        UserTestsHelper.compareResponseCode(createResponse, 200);
+        TestsHelper.compareResponseCode(createResponse, 200);
         Assert.assertEquals(createResponse.then().extract().body().path("success"), true);
     }
 
@@ -50,7 +51,7 @@ public class UserCreateTests {
         UserTestsHelper.sendPostCreateUser(userCreateModel);
         // Создание второго пользователя
         Response createResponse = UserTestsHelper.sendPostCreateUser(userCreateModel);
-        UserTestsHelper.compareResponseCode(createResponse, 403);
+        TestsHelper.compareResponseCode(createResponse, 403);
     }
 
     @Test
@@ -61,7 +62,7 @@ public class UserCreateTests {
                 password,
                 name
         ));
-        UserTestsHelper.compareResponseCode(withoutEmail, 403);
+        TestsHelper.compareResponseCode(withoutEmail, 403);
     }
 
     @After

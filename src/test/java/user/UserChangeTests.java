@@ -1,10 +1,10 @@
 package user;
 
+import common.TestsHelper;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import praktikum.LoginUserResponseModel;
@@ -48,7 +48,7 @@ public class UserChangeTests {
         // Изменение данных пользователя
         userInfo.setName("Andrei");
         Response updateUserResponse = UserTestsHelper.sendPatchUpdateUser(userInfo, token);
-        UserTestsHelper.compareResponseCode(updateUserResponse, 200);
+        TestsHelper.compareResponseCode(updateUserResponse, 200);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class UserChangeTests {
         // Изменение данных пользователя
         userInfo.setEmail("other.rat@ratmail.rat");
         Response updateUserResponse = UserTestsHelper.sendPatchUpdateUser(userInfo, token);
-        UserTestsHelper.compareResponseCode(updateUserResponse, 200);
+        TestsHelper.compareResponseCode(updateUserResponse, 200);
     }
 
     @Test
@@ -76,7 +76,7 @@ public class UserChangeTests {
         // Изменение данных пользователя
         userInfo.setName("Andrei");
         Response updateUserResponse = UserTestsHelper.sendPatchUpdateUser(userInfo, null);
-        UserTestsHelper.compareResponseCode(updateUserResponse, 401);
+        TestsHelper.compareResponseCode(updateUserResponse, 401);
     }
 
     @Test
@@ -90,12 +90,12 @@ public class UserChangeTests {
         // Изменение данных пользователя
         userInfo.setEmail("other.rat@ratmail.rat");
         Response updateUserResponse = UserTestsHelper.sendPatchUpdateUser(userInfo, null);
-        UserTestsHelper.compareResponseCode(updateUserResponse, 401);
+        TestsHelper.compareResponseCode(updateUserResponse, 401);
     }
 
     @After
     public void clean() {
         // Возвращение тестового окружения к исходному виду
-            UserTestsHelper.sendDeleteCourier(token);
+        UserTestsHelper.sendDeleteCourier(token);
     }
 }
