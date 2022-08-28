@@ -56,7 +56,7 @@ public class CreateOrderTests {
     }
 
     @Test
-    @DisplayName("Check successful creating order with auth")
+    @DisplayName("Check creating order with auth")
     public void checkCreatingOrderWithAuth() {
 
         // Получение заказов пользователя
@@ -65,7 +65,7 @@ public class CreateOrderTests {
     }
 
     @Test
-    @DisplayName("Check successful creating order without auth")
+    @DisplayName("Check failure creating order without auth")
     public void checkCreatingOrderWithoutAuth() {
 
         // Получение заказов пользователя
@@ -74,16 +74,16 @@ public class CreateOrderTests {
     }
 
     @Test
-    @DisplayName("Check successful creating order with auth. Without ingredients")
+    @DisplayName("Check failure creating order with auth. Without ingredients")
     public void checkCreatingOrderWithAuthWithoutIngredients() {
 
         // Получение заказов пользователя
         Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(emptyIngredientsModel, token);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 200);
+        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
     }
 
     @Test
-    @DisplayName("Check successful creating order without auth. Without ingredients")
+    @DisplayName("Check failure creating order without auth. Without ingredients")
     public void checkCreatingOrderWithoutAuthWithoutIngredients() {
 
         // Получение заказов пользователя
@@ -92,7 +92,7 @@ public class CreateOrderTests {
     }
 
     @Test
-    @DisplayName("Check successful creating order with auth. With incorrect ingredients")
+    @DisplayName("Check failure creating order with auth. With incorrect ingredients")
     public void checkCreatingOrderWithAuthWithIncorrectIngredients() {
 
         // Получение заказов пользователя
@@ -101,7 +101,7 @@ public class CreateOrderTests {
     }
 
     @Test
-    @DisplayName("Check successful creating order without auth. With incorrect ingredients")
+    @DisplayName("Check failure creating order without auth. With incorrect ingredients")
     public void checkCreatingOrderWithoutAuthWithoutWithIncorrectIngredients() {
 
         // Получение заказов пользователя
