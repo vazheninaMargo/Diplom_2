@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: orders.CreateOrderTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.886 s <<< FAILURE! - in orders.CreateOrderTests
+checkCreatingOrderWithAuthWithIncorrectIngredients(orders.CreateOrderTests)  Time elapsed: 0.5 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <500> but was <200>.
+
+	at orders.CreateOrderTests.checkCreatingOrderWithAuthWithIncorrectIngredients(CreateOrderTests.java:100)
+
+checkCreatingOrderWithAuthWithoutIngredients(orders.CreateOrderTests)  Time elapsed: 0.535 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <400> but was <200>.
+
+	at orders.CreateOrderTests.checkCreatingOrderWithAuthWithoutIngredients(CreateOrderTests.java:82)
+

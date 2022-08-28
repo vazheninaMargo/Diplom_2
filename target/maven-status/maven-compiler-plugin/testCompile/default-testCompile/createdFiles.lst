@@ -1,0 +1,8 @@
+orders/OrdersTestsHelper.class
+user/UserCreateTests.class
+orders/CreateOrderTests.class
+user/UserTestsHelper.class
+common/TestsHelper.class
+orders/GetOrdersTests.class
+user/UserLoginTests.class
+user/UserChangeTests.class
