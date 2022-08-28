@@ -6,6 +6,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import praktikum.LoginUserResponseModel;
 import praktikum.UserCreateModel;
@@ -14,13 +15,13 @@ import user.UserTestsHelper;
 
 public class GetOrdersTests {
 
-    private final String email = "rat@ratmail.rat";
-    private final String password = "1234";
-    private final String name = "Oleg";
-    private String token;
+    private final static String email = "rat@ratmail.rat";
+    private final static String password = "1234";
+    private final static String name = "Oleg";
+    private static String token;
 
-    @Before
-    public void setUp() {
+    @BeforeClass
+    public static void setUp() {
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
 
         UserCreateModel userCreateModel = new UserCreateModel(
@@ -35,8 +36,6 @@ public class GetOrdersTests {
         UserTestsHelper.sendPostCreateUser(userCreateModel);
         Response loginResponse = UserTestsHelper.sendPostLoginCourier(userLoginModel);
         token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
-
-
     }
 
     @Test
