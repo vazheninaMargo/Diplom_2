@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: user.UserLoginTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.933 s <<< FAILURE! - in user.UserLoginTests
-checkSuccessfulLogin(user.UserLoginTests)  Time elapsed: 0.538 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <200> but was <401>.
-
-	at user.UserLoginTests.checkSuccessfulLogin(UserLoginTests.java:44)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.471 s - in user.UserLoginTests

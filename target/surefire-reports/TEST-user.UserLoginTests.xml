@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="user.UserLoginTests" time="3.933" tests="3" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="user.UserLoginTests" time="3.471" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter15132593986627755423.jar /Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire 2022-08-28T04-19-40_518-jvmRun1 surefire14248221792901716658tmp surefire_07323643595239014837tmp"/>
+    <property name="sun.java.command" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter14037438173281580677.jar /Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire 2022-09-04T20-44-48_782-jvmRun1 surefire11618575125165981291tmp surefire_011807368466532022152tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/test-classes:/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/classes:/Users/margaritavazenina/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/margaritavazenina/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/rest-assured/5.1.1/rest-assured-5.1.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/groovy/groovy/4.0.1/groovy-4.0.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/groovy/groovy-xml/4.0.1/groovy-xml-4.0.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/margaritavazenina/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/margaritavazenina/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/margaritavazenina/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/margaritavazenina/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/margaritavazenina/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/margaritavazenina/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/json-path/5.1.1/json-path-5.1.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/groovy/groovy-json/4.0.1/groovy-json-4.0.1.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/rest-assured-common/5.1.1/rest-assured-common-5.1.1.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/xml-path/5.1.1/xml-path-5.1.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/margaritavazenina/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-junit4/2.19.0/allure-junit4-2.19.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-java-commons/2.19.0/allure-java-commons-2.19.0.jar:/Users/margaritavazenina/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-model/2.19.0/allure-model-2.19.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-rest-assured/2.19.0/allure-rest-assured-2.19.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-attachments/2.19.0/allure-attachments-2.19.0.jar:/Users/margaritavazenina/.m2/repository/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar:"/>
     <property name="allure.results.directory" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/allure-results"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter15132593986627755423.jar"/>
+    <property name="surefire.real.class.path" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter14037438173281580677.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.14+9-LTS"/>
     <property name="user.name" value="margaritavazenina"/>
@@ -60,87 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="checkLoginWithoutLoginField" classname="user.UserLoginTests" time="1.091"/>
-  <testcase name="checkSuccessfulLogin" classname="user.UserLoginTests" time="0.538">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;401&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <200> but was <401>.
-
-	at user.UserLoginTests.checkSuccessfulLogin(UserLoginTests.java:44)
-]]></failure>
-    <system-out><![CDATA[Request method:	POST
-Request URI:	https://stellarburgers.nomoreparties.site/api/auth/login
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "email": "rat@ratmail.rat",
-    "password": "1234"
-}
-HTTP/1.1 401 Unauthorized
-Date: Sun, 28 Aug 2022 01:19:44 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 61
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-ETag: W/"3d-ad9nrqlzQBuoZ0AId1U3rIgKU84"
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=YVHVRdEuAMgteQFaqEeHAYu%2BmMx8fj8FE6sFpekg1cAOa63a%2Boi5nh%2BPadDhCPn3JW9mc1Rl%2BeB5Z4KUQzLB4so0sRh10e9MWV3tugldTTADBDzyl5yFKYl4jUAcew1UkU8KclfeAjyRAGTVtQW7%2BsoWf%2B4%3D"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 7419386e0debfaea-DUS
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{
-    "success": false,
-    "message": "email or password are incorrect"
-}
-Request method:	POST
-Request URI:	https://stellarburgers.nomoreparties.site/api/auth/login
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "email": "rat@ratmail.rat",
-    "password": "1234"
-}
-HTTP/1.1 401 Unauthorized
-Date: Sun, 28 Aug 2022 01:19:44 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 61
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-ETag: W/"3d-ad9nrqlzQBuoZ0AId1U3rIgKU84"
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=wMxiyFC8CVWhfqdEHorIZmuKRprgjdb%2F%2BTaWeafWEIf6wF%2B7hnjWIqHV4uim0aYhp8mYK3cZokW%2FdKAeFBscL%2FpVsjjl1yuVc%2Fofo2ct9d9Q2iyKMLg9Vb4UU4Fgx3dWUb9MpM1%2FIds%2FUGz4TKGQrtIuWTA%3D"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 7419386fa8b6fad4-DUS
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{
-    "success": false,
-    "message": "email or password are incorrect"
-}
-]]></system-out>
-  </testcase>
-  <testcase name="checkLoginWithoutPasswordField" classname="user.UserLoginTests" time="0.527"/>
+  <testcase name="checkLoginWithIncorrectPassword" classname="user.UserLoginTests" time="0.419"/>
+  <testcase name="checkLoginWithNonExistentLogin" classname="user.UserLoginTests" time="0.294"/>
+  <testcase name="checkSuccessfulLogin" classname="user.UserLoginTests" time="0.334"/>
 </testsuite>

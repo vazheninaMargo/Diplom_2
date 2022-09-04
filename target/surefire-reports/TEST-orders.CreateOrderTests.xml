@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="orders.CreateOrderTests" time="3.886" tests="6" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="orders.CreateOrderTests" time="3.165" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter15132593986627755423.jar /Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire 2022-08-28T04-19-40_518-jvmRun1 surefire14248221792901716658tmp surefire_07323643595239014837tmp"/>
+    <property name="sun.java.command" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter14037438173281580677.jar /Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire 2022-09-04T20-44-48_782-jvmRun1 surefire11618575125165981291tmp surefire_011807368466532022152tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/test-classes:/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/classes:/Users/margaritavazenina/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/margaritavazenina/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/rest-assured/5.1.1/rest-assured-5.1.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/groovy/groovy/4.0.1/groovy-4.0.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/groovy/groovy-xml/4.0.1/groovy-xml-4.0.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/margaritavazenina/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/margaritavazenina/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/margaritavazenina/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/margaritavazenina/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/margaritavazenina/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/margaritavazenina/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/json-path/5.1.1/json-path-5.1.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/groovy/groovy-json/4.0.1/groovy-json-4.0.1.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/rest-assured-common/5.1.1/rest-assured-common-5.1.1.jar:/Users/margaritavazenina/.m2/repository/io/rest-assured/xml-path/5.1.1/xml-path-5.1.1.jar:/Users/margaritavazenina/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/margaritavazenina/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-junit4/2.19.0/allure-junit4-2.19.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-java-commons/2.19.0/allure-java-commons-2.19.0.jar:/Users/margaritavazenina/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-model/2.19.0/allure-model-2.19.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-rest-assured/2.19.0/allure-rest-assured-2.19.0.jar:/Users/margaritavazenina/.m2/repository/io/qameta/allure/allure-attachments/2.19.0/allure-attachments-2.19.0.jar:/Users/margaritavazenina/.m2/repository/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar:"/>
     <property name="allure.results.directory" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/allure-results"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter15132593986627755423.jar"/>
+    <property name="surefire.real.class.path" value="/Users/margaritavazenina/Documents/Git/Diplom/Diplom_2/target/surefire/surefirebooter14037438173281580677.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.14+9-LTS"/>
     <property name="user.name" value="margaritavazenina"/>
@@ -60,178 +60,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="checkCreatingOrderWithoutAuth" classname="orders.CreateOrderTests" time="0.521"/>
-  <testcase name="checkCreatingOrderWithAuth" classname="orders.CreateOrderTests" time="0.583"/>
-  <testcase name="checkCreatingOrderWithoutAuthWithoutWithIncorrectIngredients" classname="orders.CreateOrderTests" time="0.501"/>
-  <testcase name="checkCreatingOrderWithoutAuthWithoutIngredients" classname="orders.CreateOrderTests" time="0.521"/>
-  <testcase name="checkCreatingOrderWithAuthWithIncorrectIngredients" classname="orders.CreateOrderTests" time="0.5">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;500&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <500> but was <200>.
-
-	at orders.CreateOrderTests.checkCreatingOrderWithAuthWithIncorrectIngredients(CreateOrderTests.java:100)
-]]></failure>
-    <system-out><![CDATA[Request method:	GET
-Request URI:	https://stellarburgers.nomoreparties.site/api/orders
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGFjMmJjOTNlYmMyMDAxYjRiYWI0YSIsImlhdCI6MTY2MTY0OTU5NywiZXhwIjoxNjYxNjUwNzk3fQ.vyAXEZ0m57nBSzNQPOC4zWK923EJpGn9RCwg_pX1GJA
-				Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "ingredients": [
-        "$%_61c0c5a71d1f82001bdaaa6d",
-        "$%_61c0c5a71d1f82001bdaaa6f",
-        "$%_61c0c5a71d1f82001bdaaa72"
-    ]
-}
-HTTP/1.1 200 OK
-Date: Sun, 28 Aug 2022 01:19:59 GMT
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-ETag: W/"3a-YadHbX5bVBuONigk3k8Weq/8a0I"
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=o70RpMx5nwJ%2BK2ml0EvxzKpqGzTAHs3jg5DOcCvwV3JSos3ApqEaR%2F0bfBlmzSeHWqUYoZBCwuMv21p6HHSVurGRT8GSR2sVmBhved4AWNpTHedsExlXt%2BA5shAZs5lU0Ayh9FBQJN9Vb1Q6FaK%2B28mFpik%3D"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 741938cde9d7caf9-DUS
-Content-Encoding: gzip
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{
-    "success": true,
-    "orders": [
-        
-    ],
-    "total": 21294,
-    "totalToday": 22
-}
-Request method:	DELETE
-Request URI:	https://stellarburgers.nomoreparties.site/api/auth/user
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGFjMmJjOTNlYmMyMDAxYjRiYWI0YSIsImlhdCI6MTY2MTY0OTU5NywiZXhwIjoxNjYxNjUwNzk3fQ.vyAXEZ0m57nBSzNQPOC4zWK923EJpGn9RCwg_pX1GJA
-				Accept=*/*
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 404 Not Found
-Date: Sun, 28 Aug 2022 01:19:59 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 44
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-ETag: W/"2c-EAnCIFy1uGovyo/FU6KYwnjLgrc"
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=F3ZyyH2vNw4jovCpyEyW%2BVbZG5V6XvRqbbPi%2FxcNHMVSXmoC05%2FijpkMsHNbg1Tu0iwmDugoUzG%2FOur9ExslCEqfTQDAPPtgrdDAc%2Fv%2B313ZwrKlL%2Fq4cuUna%2BWFjSFySpodpAchK3yT0xtRecP2mDwecwc%3D"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 741938cf9b44716e-DUS
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{
-    "success": false,
-    "message": "User not found"
-}
-]]></system-out>
-  </testcase>
-  <testcase name="checkCreatingOrderWithAuthWithoutIngredients" classname="orders.CreateOrderTests" time="0.535">
-    <failure message="1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-1 expectation failed.
-Expected status code <400> but was <200>.
-
-	at orders.CreateOrderTests.checkCreatingOrderWithAuthWithoutIngredients(CreateOrderTests.java:82)
-]]></failure>
-    <system-out><![CDATA[Request method:	GET
-Request URI:	https://stellarburgers.nomoreparties.site/api/orders
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGFjMmJjOTNlYmMyMDAxYjRiYWI0YSIsImlhdCI6MTY2MTY0OTU5NywiZXhwIjoxNjYxNjUwNzk3fQ.vyAXEZ0m57nBSzNQPOC4zWK923EJpGn9RCwg_pX1GJA
-				Accept=*/*
-				Content-Type=application/json
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "ingredients": [
-        
-    ]
-}
-HTTP/1.1 200 OK
-Date: Sun, 28 Aug 2022 01:20:00 GMT
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-ETag: W/"3a-YadHbX5bVBuONigk3k8Weq/8a0I"
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=cxX12wOr5cJHs7v6DV1b05oNiODcBM0jeKMNEdy%2FhCgAlPvyHfspbPBhs%2FBhEYahT6g3wEjxII%2FGItMnPWaQYAmjr0IyMSSUF0c%2Bwwxb7dJIsYenRP5uQGBsgrFOv4dp3UaJt%2FIT7CKqisFB0dx7782nsvs%3D"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 741938d1381acb1e-DUS
-Content-Encoding: gzip
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{
-    "success": true,
-    "orders": [
-        
-    ],
-    "total": 21294,
-    "totalToday": 22
-}
-Request method:	DELETE
-Request URI:	https://stellarburgers.nomoreparties.site/api/auth/user
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGFjMmJjOTNlYmMyMDAxYjRiYWI0YSIsImlhdCI6MTY2MTY0OTU5NywiZXhwIjoxNjYxNjUwNzk3fQ.vyAXEZ0m57nBSzNQPOC4zWK923EJpGn9RCwg_pX1GJA
-				Accept=*/*
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 404 Not Found
-Date: Sun, 28 Aug 2022 01:20:00 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 44
-Connection: keep-alive
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-ETag: W/"2c-EAnCIFy1uGovyo/FU6KYwnjLgrc"
-CF-Cache-Status: DYNAMIC
-Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ZkaQXiQfAxCA3%2BIzcRaJc06yy%2B7%2F42UYtD5HxoNvXerFmtZT2jL5%2F74yKRHyy8M0kaUGrORsU7NCC0zXitAmaqHZgS1e4TZA2ahSHWFRq%2FX7H0sUjhFKJ3vFM2i6P7PI4B2gCCANpJcZ4Fpm%2F0FN8qddSWA%3D"}],"group":"cf-nel","max_age":604800}
-NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 741938d2fbe1caf9-DUS
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{
-    "success": false,
-    "message": "User not found"
-}
-]]></system-out>
-  </testcase>
+  <testcase name="checkCreatingOrderWithoutAuth" classname="orders.CreateOrderTests" time="0.25"/>
+  <testcase name="checkCreatingOrderWithAuth" classname="orders.CreateOrderTests" time="0.827"/>
+  <testcase name="checkCreatingOrderWithoutAuthWithoutWithIncorrectIngredients" classname="orders.CreateOrderTests" time="0.226"/>
+  <testcase name="checkCreatingOrderWithoutAuthWithoutIngredients" classname="orders.CreateOrderTests" time="0.255"/>
+  <testcase name="checkCreatingOrderWithAuthWithIncorrectIngredients" classname="orders.CreateOrderTests" time="0.39"/>
+  <testcase name="checkCreatingOrderWithAuthWithoutIngredients" classname="orders.CreateOrderTests" time="0.268"/>
 </testsuite>
