@@ -40,6 +40,6 @@ public class OrdersTestsHelper {
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                 .body(ingredients)
                 .when()
-                .get("/api/orders");
+                .post("/api/orders");
     }
 }

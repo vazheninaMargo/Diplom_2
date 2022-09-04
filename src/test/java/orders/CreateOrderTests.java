@@ -4,7 +4,7 @@ import common.TestsHelper;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import praktikum.IngredientsModel;
@@ -70,7 +70,7 @@ public class CreateOrderTests {
 
         // Получение заказов пользователя
         Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(correctIngredientsModel, null);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 401);
+        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class CreateOrderTests {
 
         // Получение заказов пользователя
         Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(emptyIngredientsModel, null);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 401);
+        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
     }
 
     @Test
@@ -106,11 +106,11 @@ public class CreateOrderTests {
 
         // Получение заказов пользователя
         Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(incorrectIngredientsModel, null);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 401);
+        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
     }
 
-    @After
-    public void clean() {
+    @AfterClass
+    public static void clean() {
         // Возвращение тестового окружения к исходному виду
         UserTestsHelper.sendDeleteCourier(token);
     }
