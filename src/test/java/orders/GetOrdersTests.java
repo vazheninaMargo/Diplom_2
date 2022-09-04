@@ -5,7 +5,6 @@ import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import praktikum.LoginUserResponseModel;
@@ -15,7 +14,7 @@ import user.UserTestsHelper;
 
 public class GetOrdersTests {
 
-    private final static String email = "rat@ratmail.rat";
+    private final static String email = "rat8@ratmail.rat";
     private final static String password = "1234";
     private final static String name = "Oleg";
     private static String token;
@@ -34,7 +33,7 @@ public class GetOrdersTests {
                 password
         );
         UserTestsHelper.sendPostCreateUser(userCreateModel);
-        Response loginResponse = UserTestsHelper.sendPostLoginCourier(userLoginModel);
+        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
         token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
     }
 

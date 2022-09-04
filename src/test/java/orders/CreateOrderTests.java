@@ -15,8 +15,8 @@ import user.UserTestsHelper;
 
 public class CreateOrderTests {
 
-    private final static String email = "rat@ratmail.rat";
-    private final static String password = "1234";
+    private final static String email = "rat8@ratmail.rat";
+    private final static String password = "123456";
     private static String token;
 
     private static IngredientsModel emptyIngredientsModel;
@@ -37,7 +37,7 @@ public class CreateOrderTests {
                 password
         );
         UserTestsHelper.sendPostCreateUser(userCreateModel);
-        Response loginResponse = UserTestsHelper.sendPostLoginCourier(userLoginModel);
+        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
         token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
         String[] emptyIngredients = {};
         String[] correctIngredients = {
@@ -46,9 +46,9 @@ public class CreateOrderTests {
                 "61c0c5a71d1f82001bdaaa72"
         };
         String[] incorrectIngredients = {
-                "$%_61c0c5a71d1f82001bdaaa6d",
-                "$%_61c0c5a71d1f82001bdaaa6f",
-                "$%_61c0c5a71d1f82001bdaaa72"
+                "$%_1",
+                "$%_2",
+                "$%_3"
         };
         emptyIngredientsModel = new IngredientsModel(emptyIngredients);
         correctIngredientsModel = new IngredientsModel(correctIngredients);

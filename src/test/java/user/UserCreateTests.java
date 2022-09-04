@@ -14,8 +14,8 @@ import praktikum.UserLoginModel;
 
 public class UserCreateTests {
 
-    private final String email = "Rat@ratmail.rat";
-    private final String password = "1234";
+    private final String email = "rat8@ratmail.rat";
+    private final String password = "123456";
     private final String name = "Oleg";
 
     @Before
@@ -72,7 +72,7 @@ public class UserCreateTests {
                 email,
                 password
         );
-        Response loginResponse = UserTestsHelper.sendPostLoginCourier(userLoginModel);
+        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
 
         if (loginResponse.statusCode() != 200) return;
 

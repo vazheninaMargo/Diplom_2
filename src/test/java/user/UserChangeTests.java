@@ -14,7 +14,7 @@ import praktikum.UserLoginModel;
 
 public class UserChangeTests {
 
-    private final String email = "rat@ratmail.rat";
+    private final String email = "rat8@ratmail.rat";
     private final String password = "1234";
     private final String name = "Oleg";
     private String token;
@@ -33,7 +33,7 @@ public class UserChangeTests {
                 password
         );
         UserTestsHelper.sendPostCreateUser(userCreateModel);
-        Response loginResponse = UserTestsHelper.sendPostLoginCourier(userLoginModel);
+        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
         token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
     }
 

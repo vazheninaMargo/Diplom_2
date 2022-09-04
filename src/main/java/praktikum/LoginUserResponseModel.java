@@ -2,11 +2,11 @@ package praktikum;
 
 public class LoginUserResponseModel {
     private Boolean success;
-    private UserLoginModel user;
+    private UserInfoModel user;
     private String accessToken;
     private String refreshToken;
 
-    public LoginUserResponseModel(Boolean success, UserLoginModel user, String accessToken, String refreshToken) {
+    public LoginUserResponseModel(Boolean success, UserInfoModel user, String accessToken, String refreshToken) {
         this.success = success;
         this.user = user;
         this.accessToken = accessToken;
@@ -24,11 +24,11 @@ public class LoginUserResponseModel {
         this.success = success;
     }
 
-    public UserLoginModel getUser() {
+    public UserInfoModel getUser() {
         return user;
     }
 
-    public void setUser(UserLoginModel user) {
+    public void setUser(UserInfoModel user) {
         this.user = user;
     }
 

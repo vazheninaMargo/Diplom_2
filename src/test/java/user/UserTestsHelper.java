@@ -25,7 +25,7 @@ public class UserTestsHelper {
     }
 
     @Step("Send POST request to /api/auth/login")
-    static public Response sendPostLoginCourier(UserLoginModel model) {
+    static public Response sendPostLoginUser(UserLoginModel model) {
         return given()
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                 .body(model)
