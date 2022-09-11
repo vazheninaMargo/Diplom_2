@@ -1,8 +1,8 @@
-orders/OrdersTestsHelper.class
 user/UserCreateTests.class
+utils/ApiClient$User.class
 orders/CreateOrderTests.class
-user/UserTestsHelper.class
-common/TestsHelper.class
+utils/ApiClient$Order.class
 orders/GetOrdersTests.class
+utils/ApiClient.class
 user/UserLoginTests.class
 user/UserChangeTests.class
