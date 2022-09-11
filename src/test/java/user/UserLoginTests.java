@@ -1,15 +1,16 @@
 package user;
 
-import common.TestsHelper;
+import api.client.LoginUserResponseModel;
+import api.client.UserCreateModel;
+import api.client.UserLoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import praktikum.LoginUserResponseModel;
-import praktikum.UserCreateModel;
-import praktikum.UserLoginModel;
+import utils.ApiClient;
 
 public class UserLoginTests {
 
@@ -32,15 +33,16 @@ public class UserLoginTests {
                 email,
                 password
         );
-        UserTestsHelper.sendPostCreateUser(userCreateModel);
+        ApiClient.User.sendPostCreateUser(userCreateModel);
     }
 
     @Test
     @DisplayName("Check successful login of user")
     public void checkSuccessfulLogin() {
         // Проверка логина пользователя
-        Response response = UserTestsHelper.sendPostLoginUser(userLoginModel);
-        TestsHelper.compareResponseCode(response, 200);
+        Response response = ApiClient.User.sendPostLoginUser(userLoginModel);
+        response.then().statusCode(200);
+        Assert.assertEquals(response.body().path("success"), true);
     }
 
     @Test
@@ -52,8 +54,10 @@ public class UserLoginTests {
         );
 
         // Проверка логина пользователя с неправильным email
-        Response response = UserTestsHelper.sendPostLoginUser(model);
-        TestsHelper.compareResponseCode(response, 401);
+        Response response = ApiClient.User.sendPostLoginUser(model);
+        response.then().statusCode(401);
+        Assert.assertEquals(response.body().path("success"), false);
+        Assert.assertEquals(response.body().path("message"), "email or password are incorrect");
     }
 
     @Test
@@ -65,8 +69,10 @@ public class UserLoginTests {
         );
 
         // Проверка логина пользователя с неправильным паролем
-        Response response = UserTestsHelper.sendPostLoginUser(model);
-        TestsHelper.compareResponseCode(response, 401);
+        Response response = ApiClient.User.sendPostLoginUser(model);
+        response.then().statusCode(401);
+        Assert.assertEquals(response.body().path("success"), false);
+        Assert.assertEquals(response.body().path("message"), "email or password are incorrect");
     }
 
     @AfterClass
@@ -76,13 +82,13 @@ public class UserLoginTests {
                 email,
                 password
         );
-        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
+        Response loginResponse = ApiClient.User.sendPostLoginUser(userLoginModel);
 
         if (loginResponse.statusCode() != 200) return;
 
         String token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
         if (token != null) {
-            UserTestsHelper.sendDeleteCourier(token);
+            ApiClient.User.sendDeleteCourier(token);
         }
     }
 }

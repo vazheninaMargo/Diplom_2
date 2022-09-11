@@ -1,4 +1,4 @@
-package praktikum;
+package api.client;
 
 public class UserLoginModel {
     private String email;

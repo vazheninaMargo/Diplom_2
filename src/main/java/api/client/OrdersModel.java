@@ -1,4 +1,4 @@
-package praktikum;
+package api.client;
 
 public class OrdersModel {
     private OrderModel[] orders;
@@ -11,7 +11,8 @@ public class OrdersModel {
         this.totalToday = totalToday;
     }
 
-    public OrdersModel() { }
+    public OrdersModel() {
+    }
 
     public OrderModel[] getOrders() {
         return orders;

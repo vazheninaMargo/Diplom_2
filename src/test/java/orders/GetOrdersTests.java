@@ -1,16 +1,16 @@
 package orders;
 
-import common.TestsHelper;
+import api.client.LoginUserResponseModel;
+import api.client.UserCreateModel;
+import api.client.UserLoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import praktikum.LoginUserResponseModel;
-import praktikum.UserCreateModel;
-import praktikum.UserLoginModel;
-import user.UserTestsHelper;
+import utils.ApiClient;
 
 public class GetOrdersTests {
 
@@ -26,14 +26,14 @@ public class GetOrdersTests {
         UserCreateModel userCreateModel = new UserCreateModel(
                 email,
                 password,
-                "Oleg"
+                name
         );
         UserLoginModel userLoginModel = new UserLoginModel(
                 email,
                 password
         );
-        UserTestsHelper.sendPostCreateUser(userCreateModel);
-        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
+        ApiClient.User.sendPostCreateUser(userCreateModel);
+        Response loginResponse = ApiClient.User.sendPostLoginUser(userLoginModel);
         token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
     }
 
@@ -42,8 +42,12 @@ public class GetOrdersTests {
     public void checkReceivingOrdersWithAuth() {
 
         // Получение заказов пользователя
-        Response ordersResponse = OrdersTestsHelper.sendGetOrdersList(token);
-        TestsHelper.compareResponseCode(ordersResponse, 200);
+        Response ordersResponse = ApiClient.Order.sendGetOrdersList(token);
+        ordersResponse.then().statusCode(200);
+        Assert.assertEquals(ordersResponse.body().path("success"), true);
+        Assert.assertNotNull(ordersResponse.body().path("orders"));
+        Assert.assertNotNull(ordersResponse.body().path("total"));
+        Assert.assertNotNull(ordersResponse.body().path("totalToday"));
     }
 
     @Test
@@ -51,13 +55,15 @@ public class GetOrdersTests {
     public void checkReceivingOrdersWithoutAuth() {
 
         // Получение заказов пользователя
-        Response ordersResponse = OrdersTestsHelper.sendGetOrdersList(null);
-        TestsHelper.compareResponseCode(ordersResponse, 401);
+        Response ordersResponse = ApiClient.Order.sendGetOrdersList(null);
+        ordersResponse.then().statusCode(401);
+        Assert.assertEquals(ordersResponse.body().path("success"), false);
+        Assert.assertEquals(ordersResponse.body().path("message"), "You should be authorised");
     }
 
     @After
     public void clean() {
         // Возвращение тестового окружения к исходному виду
-        UserTestsHelper.sendDeleteCourier(token);
+        ApiClient.User.sendDeleteCourier(token);
     }
 }

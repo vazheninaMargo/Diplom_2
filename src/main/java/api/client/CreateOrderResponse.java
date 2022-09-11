@@ -1,4 +1,4 @@
-package praktikum;
+package api.client;
 
 public class CreateOrderResponse {
     private String name;
@@ -11,7 +11,8 @@ public class CreateOrderResponse {
         this.success = success;
     }
 
-    public CreateOrderResponse() { }
+    public CreateOrderResponse() {
+    }
 
     public String getName() {
         return name;

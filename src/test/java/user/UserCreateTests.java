@@ -1,6 +1,8 @@
 package user;
 
-import common.TestsHelper;
+import api.client.LoginUserResponseModel;
+import api.client.UserCreateModel;
+import api.client.UserLoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -8,9 +10,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import praktikum.LoginUserResponseModel;
-import praktikum.UserCreateModel;
-import praktikum.UserLoginModel;
+import utils.ApiClient;
 
 public class UserCreateTests {
 
@@ -33,9 +33,11 @@ public class UserCreateTests {
         );
 
         // Создание пользователя
-        Response createResponse = UserTestsHelper.sendPostCreateUser(userCreateModel);
-        TestsHelper.compareResponseCode(createResponse, 200);
+        Response createResponse = ApiClient.User.sendPostCreateUser(userCreateModel);
+        createResponse.then().statusCode(200);
         Assert.assertEquals(createResponse.then().extract().body().path("success"), true);
+        Assert.assertEquals(createResponse.then().extract().body().path("user.name"), name);
+        Assert.assertEquals(createResponse.then().extract().body().path("user.email"), email);
     }
 
     @Test
@@ -48,21 +50,25 @@ public class UserCreateTests {
         );
 
         // Создание первого пользователя
-        UserTestsHelper.sendPostCreateUser(userCreateModel);
+        ApiClient.User.sendPostCreateUser(userCreateModel);
         // Создание второго пользователя
-        Response createResponse = UserTestsHelper.sendPostCreateUser(userCreateModel);
-        TestsHelper.compareResponseCode(createResponse, 403);
+        Response createResponse = ApiClient.User.sendPostCreateUser(userCreateModel);
+        createResponse.then().statusCode(403);
+        Assert.assertEquals(createResponse.then().extract().body().path("success"), false);
+        Assert.assertEquals(createResponse.then().extract().body().path("message"), "User already exists");
     }
 
     @Test
     @DisplayName("Check creating of user without email")
     public void checkCreatingOfUserWithoutLogin() {
-        Response withoutEmail = UserTestsHelper.sendPostCreateUser(new UserCreateModel(
+        Response withoutEmail = ApiClient.User.sendPostCreateUser(new UserCreateModel(
                 null,
                 password,
                 name
         ));
-        TestsHelper.compareResponseCode(withoutEmail, 403);
+        withoutEmail.then().statusCode(403);
+        Assert.assertEquals(withoutEmail.then().extract().body().path("success"), false);
+        Assert.assertEquals(withoutEmail.then().extract().body().path("message"), "Email, password and name are required fields");
     }
 
     @After
@@ -72,13 +78,13 @@ public class UserCreateTests {
                 email,
                 password
         );
-        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
+        Response loginResponse = ApiClient.User.sendPostLoginUser(userLoginModel);
 
         if (loginResponse.statusCode() != 200) return;
 
         String token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
         if (token != null) {
-            UserTestsHelper.sendDeleteCourier(token);
+            ApiClient.User.sendDeleteCourier(token);
         }
     }
 }

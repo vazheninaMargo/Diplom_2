@@ -1,17 +1,17 @@
 package orders;
 
-import common.TestsHelper;
+import api.client.IngredientsModel;
+import api.client.LoginUserResponseModel;
+import api.client.UserCreateModel;
+import api.client.UserLoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import praktikum.IngredientsModel;
-import praktikum.LoginUserResponseModel;
-import praktikum.UserCreateModel;
-import praktikum.UserLoginModel;
-import user.UserTestsHelper;
+import utils.ApiClient;
 
 public class CreateOrderTests {
 
@@ -36,8 +36,8 @@ public class CreateOrderTests {
                 email,
                 password
         );
-        UserTestsHelper.sendPostCreateUser(userCreateModel);
-        Response loginResponse = UserTestsHelper.sendPostLoginUser(userLoginModel);
+        ApiClient.User.sendPostCreateUser(userCreateModel);
+        Response loginResponse = ApiClient.User.sendPostLoginUser(userLoginModel);
         token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
         String[] emptyIngredients = {};
         String[] correctIngredients = {
@@ -60,8 +60,11 @@ public class CreateOrderTests {
     public void checkCreatingOrderWithAuth() {
 
         // Получение заказов пользователя
-        Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(correctIngredientsModel, token);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 200);
+        Response ingredientsListResponse = ApiClient.Order.sendPostCreateOrder(correctIngredientsModel, token);
+        ingredientsListResponse.then().statusCode(200);
+        Assert.assertEquals(ingredientsListResponse.body().path("success"), true);
+        Assert.assertNotNull(ingredientsListResponse.body().path("name"));
+        Assert.assertNotNull(ingredientsListResponse.body().path("order"));
     }
 
     @Test
@@ -69,8 +72,10 @@ public class CreateOrderTests {
     public void checkCreatingOrderWithoutAuth() {
 
         // Получение заказов пользователя
-        Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(correctIngredientsModel, null);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
+        Response ingredientsListResponse = ApiClient.Order.sendPostCreateOrder(correctIngredientsModel, null);
+        ingredientsListResponse.then().statusCode(400);
+        Assert.assertEquals(ingredientsListResponse.body().path("success"), false);
+        Assert.assertEquals(ingredientsListResponse.body().path("message"), "Ingredient ids must be provided");
     }
 
     @Test
@@ -78,8 +83,10 @@ public class CreateOrderTests {
     public void checkCreatingOrderWithAuthWithoutIngredients() {
 
         // Получение заказов пользователя
-        Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(emptyIngredientsModel, token);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
+        Response ingredientsListResponse = ApiClient.Order.sendPostCreateOrder(emptyIngredientsModel, token);
+        ingredientsListResponse.then().statusCode(400);
+        Assert.assertEquals(ingredientsListResponse.body().path("success"), false);
+        Assert.assertEquals(ingredientsListResponse.body().path("message"), "Ingredient ids must be provided");
     }
 
     @Test
@@ -87,8 +94,10 @@ public class CreateOrderTests {
     public void checkCreatingOrderWithoutAuthWithoutIngredients() {
 
         // Получение заказов пользователя
-        Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(emptyIngredientsModel, null);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
+        Response ingredientsListResponse = ApiClient.Order.sendPostCreateOrder(emptyIngredientsModel, null);
+        ingredientsListResponse.then().statusCode(400);
+        Assert.assertEquals(ingredientsListResponse.body().path("success"), false);
+        Assert.assertEquals(ingredientsListResponse.body().path("message"), "Ingredient ids must be provided");
     }
 
     @Test
@@ -96,8 +105,8 @@ public class CreateOrderTests {
     public void checkCreatingOrderWithAuthWithIncorrectIngredients() {
 
         // Получение заказов пользователя
-        Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(incorrectIngredientsModel, token);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 500);
+        Response ingredientsListResponse = ApiClient.Order.sendPostCreateOrder(incorrectIngredientsModel, token);
+        ingredientsListResponse.then().statusCode(500);
     }
 
     @Test
@@ -105,13 +114,15 @@ public class CreateOrderTests {
     public void checkCreatingOrderWithoutAuthWithoutWithIncorrectIngredients() {
 
         // Получение заказов пользователя
-        Response ingredientsListResponse = OrdersTestsHelper.sendPostCreateOrder(incorrectIngredientsModel, null);
-        TestsHelper.compareResponseCode(ingredientsListResponse, 400);
+        Response ingredientsListResponse = ApiClient.Order.sendPostCreateOrder(incorrectIngredientsModel, null);
+        ingredientsListResponse.then().statusCode(400);
+        Assert.assertEquals(ingredientsListResponse.body().path("success"), false);
+        Assert.assertEquals(ingredientsListResponse.body().path("message"), "Ingredient ids must be provided");
     }
 
     @AfterClass
     public static void clean() {
         // Возвращение тестового окружения к исходному виду
-        UserTestsHelper.sendDeleteCourier(token);
+        ApiClient.User.sendDeleteCourier(token);
     }
 }

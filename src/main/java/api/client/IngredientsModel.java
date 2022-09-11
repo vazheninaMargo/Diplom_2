@@ -1,4 +1,4 @@
-package praktikum;
+package api.client;
 
 public class IngredientsModel {
     private String[] ingredients;
@@ -7,7 +7,8 @@ public class IngredientsModel {
         this.ingredients = ingredients;
     }
 
-    public IngredientsModel() { }
+    public IngredientsModel() {
+    }
 
     public String[] getIngredients() {
         return ingredients;

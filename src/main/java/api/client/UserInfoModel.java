@@ -1,4 +1,4 @@
-package praktikum;
+package api.client;
 
 public class UserInfoModel {
     private String email;
@@ -9,7 +9,8 @@ public class UserInfoModel {
         this.name = name;
     }
 
-    public UserInfoModel() {}
+    public UserInfoModel() {
+    }
 
     public String getEmail() {
         return email;

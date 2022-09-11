@@ -1,4 +1,4 @@
-package praktikum;
+package api.client;
 
 public class OrderModel {
     private String[] ingredients;
@@ -17,7 +17,8 @@ public class OrderModel {
         this.updatedAt = updatedAt;
     }
 
-    public OrderModel() { }
+    public OrderModel() {
+    }
 
     public String[] getIngredients() {
         return ingredients;
