@@ -1,8 +1,8 @@
 package orders;
 
-import api.client.LoginUserResponseModel;
-import api.client.UserCreateModel;
-import api.client.UserLoginModel;
+import api.client.login.LoginResponseModel;
+import api.client.registration.RegistrationModel;
+import api.client.login.LoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -23,18 +23,18 @@ public class GetOrdersTests {
     public static void setUp() {
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
 
-        UserCreateModel userCreateModel = new UserCreateModel(
+        RegistrationModel userCreateModel = new RegistrationModel(
                 email,
                 password,
                 name
         );
-        UserLoginModel userLoginModel = new UserLoginModel(
+        LoginModel userLoginModel = new LoginModel(
                 email,
                 password
         );
         ApiClient.User.sendPostCreateUser(userCreateModel);
         Response loginResponse = ApiClient.User.sendPostLoginUser(userLoginModel);
-        token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
+        token = loginResponse.body().as(LoginResponseModel.class).getAccessToken();
     }
 
     @Test

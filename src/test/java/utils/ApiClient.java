@@ -1,9 +1,9 @@
 package utils;
 
-import api.client.IngredientsModel;
-import api.client.UserCreateModel;
-import api.client.UserInfoModel;
-import api.client.UserLoginModel;
+import api.client.order.IngredientsModel;
+import api.client.registration.RegistrationModel;
+import api.models.UserModel;
+import api.client.login.LoginModel;
 import io.qameta.allure.Step;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -49,7 +49,7 @@ public class ApiClient {
 
     public static class User {
         @Step("Send POST request to /api/auth/register")
-        static public Response sendPostCreateUser(UserCreateModel model) {
+        static public Response sendPostCreateUser(RegistrationModel model) {
             return given()
                     .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                     .body(model)
@@ -59,7 +59,7 @@ public class ApiClient {
         }
 
         @Step("Send POST request to /api/auth/login")
-        static public Response sendPostLoginUser(UserLoginModel model) {
+        static public Response sendPostLoginUser(LoginModel model) {
             return given()
                     .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                     .body(model)
@@ -69,7 +69,7 @@ public class ApiClient {
         }
 
         @Step("Send PATCH request to /api/auth/user")
-        static public Response sendPatchUpdateUser(UserInfoModel model, String token) {
+        static public Response sendPatchUpdateUser(UserModel model, String token) {
             Map<String, Object> headers = new HashMap<>();
             headers.put("Authorization", token);
             headers.put("Content-type", "application/json");

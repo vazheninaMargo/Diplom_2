@@ -1,4 +1,6 @@
-package api.client;
+package api.client.order;
+
+import api.models.OrderModel;
 
 public class CreateOrderResponse {
     private String name;

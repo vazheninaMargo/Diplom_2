@@ -1,4 +1,4 @@
-package api.client;
+package api.client.order;
 
 public class IngredientsModel {
     private String[] ingredients;

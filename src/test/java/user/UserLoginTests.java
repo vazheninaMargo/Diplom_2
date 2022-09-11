@@ -1,8 +1,8 @@
 package user;
 
-import api.client.LoginUserResponseModel;
-import api.client.UserCreateModel;
-import api.client.UserLoginModel;
+import api.client.login.LoginResponseModel;
+import api.client.registration.RegistrationModel;
+import api.client.login.LoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -18,18 +18,18 @@ public class UserLoginTests {
     private final static String password = "123456";
     private final static String name = "Oleg";
 
-    private static UserLoginModel userLoginModel;
+    private static LoginModel userLoginModel;
 
     @BeforeClass
     public static void setUp() {
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
 
-        UserCreateModel userCreateModel = new UserCreateModel(
+        RegistrationModel userCreateModel = new RegistrationModel(
                 email,
                 password,
                 name
         );
-        userLoginModel = new UserLoginModel(
+        userLoginModel = new LoginModel(
                 email,
                 password
         );
@@ -48,7 +48,7 @@ public class UserLoginTests {
     @Test
     @DisplayName("Check login without login field")
     public void checkLoginWithNonExistentLogin() {
-        UserLoginModel model = new UserLoginModel(
+        LoginModel model = new LoginModel(
                 "other.mail@ratmail.rat",
                 password
         );
@@ -63,7 +63,7 @@ public class UserLoginTests {
     @Test
     @DisplayName("Check login without password field")
     public void checkLoginWithIncorrectPassword() {
-        UserLoginModel model = new UserLoginModel(
+        LoginModel model = new LoginModel(
                 email,
                 "1111"
         );
@@ -78,7 +78,7 @@ public class UserLoginTests {
     @AfterClass
     public static void clean() {
         // Возвращение тестового окружения к исходному виду
-        UserLoginModel userLoginModel = new UserLoginModel(
+        LoginModel userLoginModel = new LoginModel(
                 email,
                 password
         );
@@ -86,7 +86,7 @@ public class UserLoginTests {
 
         if (loginResponse.statusCode() != 200) return;
 
-        String token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
+        String token = loginResponse.body().as(LoginResponseModel.class).getAccessToken();
         if (token != null) {
             ApiClient.User.sendDeleteCourier(token);
         }

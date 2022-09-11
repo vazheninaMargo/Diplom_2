@@ -1,15 +1,15 @@
-package api.client;
+package api.models;
 
-public class UserInfoModel {
+public class UserModel {
     private String email;
     private String name;
 
-    public UserInfoModel(String email, String name) {
+    public UserModel(String email, String name) {
         this.email = email;
         this.name = name;
     }
 
-    public UserInfoModel() {
+    public UserModel() {
     }
 
     public String getEmail() {

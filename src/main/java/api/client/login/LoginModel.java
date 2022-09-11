@@ -1,17 +1,15 @@
-package api.client;
+package api.client.login;
 
-public class UserCreateModel {
+public class LoginModel {
     private String email;
     private String password;
-    private String name;
 
-    public UserCreateModel(String email, String password, String name) {
+    public LoginModel(String email, String password) {
         this.email = email;
         this.password = password;
-        this.name = name;
     }
 
-    public UserCreateModel() {
+    public LoginModel() {
     }
 
     public String getEmail() {
@@ -28,13 +26,5 @@ public class UserCreateModel {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

@@ -1,19 +1,21 @@
-package api.client;
+package api.client.login;
 
-public class LoginUserResponseModel {
+import api.models.UserModel;
+
+public class LoginResponseModel {
     private Boolean success;
-    private UserInfoModel user;
+    private UserModel user;
     private String accessToken;
     private String refreshToken;
 
-    public LoginUserResponseModel(Boolean success, UserInfoModel user, String accessToken, String refreshToken) {
+    public LoginResponseModel(Boolean success, UserModel user, String accessToken, String refreshToken) {
         this.success = success;
         this.user = user;
         this.accessToken = accessToken;
         this.refreshToken = refreshToken;
     }
 
-    public LoginUserResponseModel() {
+    public LoginResponseModel() {
     }
 
     public Boolean getSuccess() {
@@ -24,11 +26,11 @@ public class LoginUserResponseModel {
         this.success = success;
     }
 
-    public UserInfoModel getUser() {
+    public UserModel getUser() {
         return user;
     }
 
-    public void setUser(UserInfoModel user) {
+    public void setUser(UserModel user) {
         this.user = user;
     }
 

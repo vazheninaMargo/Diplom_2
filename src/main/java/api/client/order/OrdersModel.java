@@ -1,4 +1,6 @@
-package api.client;
+package api.client.order;
+
+import api.models.OrderModel;
 
 public class OrdersModel {
     private OrderModel[] orders;

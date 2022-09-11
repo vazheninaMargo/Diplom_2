@@ -1,8 +1,8 @@
 package user;
 
-import api.client.LoginUserResponseModel;
-import api.client.UserCreateModel;
-import api.client.UserLoginModel;
+import api.client.login.LoginResponseModel;
+import api.client.registration.RegistrationModel;
+import api.client.login.LoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -26,7 +26,7 @@ public class UserCreateTests {
     @Test
     @DisplayName("Check successful creating of user")
     public void checkSuccessfulCreatingOfUser() {
-        UserCreateModel userCreateModel = new UserCreateModel(
+        RegistrationModel userCreateModel = new RegistrationModel(
                 email,
                 password,
                 name
@@ -43,7 +43,7 @@ public class UserCreateTests {
     @Test
     @DisplayName("Check duplicate of user creating")
     public void checkDuplicateCreatingOfUser() {
-        UserCreateModel userCreateModel = new UserCreateModel(
+        RegistrationModel userCreateModel = new RegistrationModel(
                 email,
                 password,
                 name
@@ -61,7 +61,7 @@ public class UserCreateTests {
     @Test
     @DisplayName("Check creating of user without email")
     public void checkCreatingOfUserWithoutLogin() {
-        Response withoutEmail = ApiClient.User.sendPostCreateUser(new UserCreateModel(
+        Response withoutEmail = ApiClient.User.sendPostCreateUser(new RegistrationModel(
                 null,
                 password,
                 name
@@ -74,7 +74,7 @@ public class UserCreateTests {
     @After
     public void clean() {
         // Возвращение тестового окружения к исходному виду
-        UserLoginModel userLoginModel = new UserLoginModel(
+        LoginModel userLoginModel = new LoginModel(
                 email,
                 password
         );
@@ -82,7 +82,7 @@ public class UserCreateTests {
 
         if (loginResponse.statusCode() != 200) return;
 
-        String token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
+        String token = loginResponse.body().as(LoginResponseModel.class).getAccessToken();
         if (token != null) {
             ApiClient.User.sendDeleteCourier(token);
         }

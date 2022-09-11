@@ -1,9 +1,9 @@
 package user;
 
-import api.client.LoginUserResponseModel;
-import api.client.UserCreateModel;
-import api.client.UserInfoModel;
-import api.client.UserLoginModel;
+import api.client.login.LoginResponseModel;
+import api.client.registration.RegistrationModel;
+import api.models.UserModel;
+import api.client.login.LoginModel;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -25,18 +25,18 @@ public class UserChangeTests {
         String password = "1234";
         String name = "Oleg";
 
-        UserCreateModel userCreateModel = new UserCreateModel(
+        RegistrationModel userCreateModel = new RegistrationModel(
                 email,
                 password,
                 name
         );
-        UserLoginModel userLoginModel = new UserLoginModel(
+        LoginModel userLoginModel = new LoginModel(
                 email,
                 password
         );
         ApiClient.User.sendPostCreateUser(userCreateModel);
         Response loginResponse = ApiClient.User.sendPostLoginUser(userLoginModel);
-        token = loginResponse.body().as(LoginUserResponseModel.class).getAccessToken();
+        token = loginResponse.body().as(LoginResponseModel.class).getAccessToken();
     }
 
     @Test
@@ -45,7 +45,7 @@ public class UserChangeTests {
 
         // Получение данных пользователя
         Response userInfoResponse = ApiClient.User.sendGetUserInfo(token);
-        UserInfoModel userInfo = userInfoResponse.as(UserInfoModel.class);
+        UserModel userInfo = userInfoResponse.as(UserModel.class);
 
         // Изменение данных пользователя
         userInfo.setName("Andrei");
@@ -62,7 +62,7 @@ public class UserChangeTests {
 
         // Получение данных пользователя
         Response userInfoResponse = ApiClient.User.sendGetUserInfo(token);
-        UserInfoModel userInfo = userInfoResponse.as(UserInfoModel.class);
+        UserModel userInfo = userInfoResponse.as(UserModel.class);
 
         // Изменение данных пользователя
         userInfo.setEmail("other.rat@ratmail.rat");
@@ -79,7 +79,7 @@ public class UserChangeTests {
 
         // Получение данных пользователя
         Response userInfoResponse = ApiClient.User.sendGetUserInfo(token);
-        UserInfoModel userInfo = userInfoResponse.as(UserInfoModel.class);
+        UserModel userInfo = userInfoResponse.as(UserModel.class);
 
         // Изменение данных пользователя
         userInfo.setName("Andrei");
@@ -95,7 +95,7 @@ public class UserChangeTests {
 
         // Получение данных пользователя
         Response userInfoResponse = ApiClient.User.sendGetUserInfo(token);
-        UserInfoModel userInfo = userInfoResponse.as(UserInfoModel.class);
+        UserModel userInfo = userInfoResponse.as(UserModel.class);
 
         // Изменение данных пользователя
         userInfo.setEmail("other.rat@ratmail.rat");
