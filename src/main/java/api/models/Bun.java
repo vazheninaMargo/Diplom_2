@@ -1,4 +1,4 @@
-package praktikum;
+package api.models;
 
 /**
  * Модель булочки для бургера.

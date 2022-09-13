@@ -1,4 +1,9 @@
-package praktikum;
+package api;
+
+import api.models.Bun;
+import api.models.Burger;
+import api.models.Database;
+import api.models.Ingredient;
 
 import java.util.List;
 

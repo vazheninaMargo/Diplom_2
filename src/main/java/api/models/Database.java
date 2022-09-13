@@ -1,4 +1,4 @@
-package praktikum;
+package api.models;
 
 import java.util.ArrayList;
 import java.util.List;

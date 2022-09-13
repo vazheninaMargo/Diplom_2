@@ -1,0 +1,8 @@
+user/UserCreateTests.class
+utils/ApiClient$User.class
+orders/CreateOrderTests.class
+utils/ApiClient$Order.class
+orders/GetOrdersTests.class
+utils/ApiClient.class
+user/UserLoginTests.class
+user/UserChangeTests.class
